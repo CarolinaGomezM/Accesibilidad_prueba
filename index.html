@@ -1,29 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <title>Ejemplo de HTML</title>
-    </head>
-    <body>
-        <header>
-            <h1>Bienvenido a mi página web</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">Sobre Nosotros</a></li>
-                    <li><a href="#products">Productos</a></li>
-                    <li><a href="#gallery">Galería</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Accesibilidad"> <head> 
+  <title>Ejemplo de HTML</title> </head> 
+  <style> /* Estilos generales */ /* Estilos generales */ 
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0;
+   background-color: #f8f8f8; }
+  /* Estilos del encabezado */
+  header {
+  background-color: #4d4d4d;
+  color: #fff;
+  padding: 20px;
+  }
+  
+  header h1 {
+  margin: 0;
+  font-size: 32px;
+  }
+  
+  nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+  }
+  
+  nav li {
+  display: inline-block;
+  margin-right: 20px;
+  }
+  
+  nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  }
+  
+  nav a:hover, nav a:focus {
+  text-decoration: underline;
+  }
+  
+  /* Estilos de la sección principal */
+  main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  }
+  
+  section {
+  margin-bottom: 40px;
+  }
+  
+  h2 {
+  font-size: 24px;
+  margin-top: 0;
+  color: #333;
+  }
+  
+  p {
+  line-height: 1.5;
+  color: #666;
+  }
+  
+  /* Estilos de la tabla */
+  table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  }
+  
+  th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+  }
+  
+  /* Estilos de la galería */
+  .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  }
+  
+  .gallery img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+  /* Estilos del formulario de suscripción */
+  input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #404040;
+  }
+  
+  /* Estilos del pie de página */
+  footer {
+  background-color: #4d4d4d;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  }
+  
+  footer p {
+  color: white;
+  }
+  </style>
+  <body>
+  <header>
+  <h1>Bienvenido a mi página web</h1>
+  <nav>
+  <ul>
+  <li><a href="#about">Sobre Nosotros</a></li>
+  <li><a href="#products">Productos</a></li>
+  <li><a href="#gallery">Galería</a></li>
+  <li><a href="#contact">Contacto</a></li>
+  </ul>
+  </nav>
+  </header>
     
         <main>
             <section id="about">
                 <h2>Sobre Nosotros</h2>
                 <p>Somos una empresa dedicada a la venta de productos de alta calidad. Nos esforzamos por brindar un excelente servicio a nuestros clientes.</p>
-                <img src="logo.jpg" alt="Logotipo de la empresa" width="200" height="200">
+                <img src="logo.jpg" role="presentation" width="100" height="80">
             </section>
     
             <section id="products">
@@ -31,24 +140,24 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Disponibilidad</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Disponibilidad</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Producto 1</td>
+                            <th scope="row">Producto 1</th>
                             <td>$99.99</td>
                             <td>En stock</td>
                         </tr>
                         <tr>
-                            <td>Producto 2</td>
+                            <th scope="row">Producto 2</th>
                             <td>$59.99</td>
                             <td>Agotado</td>
                         </tr>
                         <tr>
-                            <td>Producto 3</td>
+                            <th scope="row">Producto 3</th>
                             <td>$149.99</td>
                             <td>En stock</td>
                         </tr>
@@ -59,9 +168,9 @@
             <section id="gallery">
                 <h2>Galería de Imágenes</h2>
                 <div>
-                    <img src="image1.jpg" alt="Imagen 1" width="300" height="200">
-                    <img src="image2.jpg" alt="Imagen 2" width="300" height="200">
-                    <img src="image3.jpg" alt="Imagen 3" width="300" height="200">
+                    <img src="image1.jpg" alt="Crema para el rostro limpiadora 100 mililitros de Liz Earle" width="300" height="200">
+                    <img src="image2.jpg" alt="Kit de skincare para el, mascarilla, crema y aceite." width="300" height="200">
+                    <img src="image3.jpg" alt="Kit de cuidado para cabello, exfoliante, crema y shampoo" width="300" height="200">
                 </div>
             </section>
     
@@ -69,15 +178,16 @@
                 <h2>Contáctanos</h2>
                 <p>Para más información, puedes comunicarte con nosotros a través de los siguientes medios:</p>
                 <ul>
+                    <li><label>Suscribete:</label> <input type="text" title="Suscibete" aria-required="true"></input></li>
                     <li>Teléfono: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
                     <li>Correo electrónico: <a href="mailto:info@example.com">info@example.com</a></li>
-                    <li>Sitio web: <a href="https://www.example.com">www.example.com</a></li>
+                    <li>Sitio web: <a href="https://www.example.com" aria-label="Ejemplo de página web">www.example.com</a></li>
                 </ul>
             </section>
         </main>
     
         <footer>
-            <p>&copy; 2023 Ejemplo de Página Web. Todos los derechos reservados.</p>
+            <p >&copy; 2023 Ejemplo de Página Web. Todos los derechos reservados.</p>
         </footer>
     </body>
     </html>
