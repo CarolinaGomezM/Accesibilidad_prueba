@@ -225,7 +225,7 @@
 
         <div role="group" aria-labelledby="mini-form-label">
           <div id="mini-form-label">Dudas</div>
-          <form aria-label="Formulario de contacto">
+          <form id="duda-form" aria-label="Formulario de contacto" action="#">
             <div>
               <label for="nombre">Nombre:</label>
               <input type="text" id="nombre" name="nombre" aria-required="true">
@@ -235,7 +235,8 @@
               <input type="email" id="email" name="email" aria-required="true">
             </div>
             <div>
-              <button type="submit">Enviar</button>
+              <button id="btn" type="submit">Enviar</button>
+              <p id="respuesta" aria-hidden="true"></p>
             </div>
           </form>
         </div>
@@ -247,3 +248,4 @@
     </footer>
   </body>
 </html>
+<script>document.getElementById('duda-form').addEventListener('submit', (e)=>{e.preventDefault()});document.getElementById('btn').addEventListener('click', ()=>{document.getElementById('respuesta').innerText = "Duda enviada correctamente"; document.getElementById('respuesta').ariaHidden = false;})</script>
